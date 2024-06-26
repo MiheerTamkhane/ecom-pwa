@@ -1,5 +1,7 @@
 import { useState } from "react";
-// import { NavLink, useNavigate } from "react-router-dom";
+import { FiHeart } from "react-icons/fi";
+import { AiOutlineShoppingCart, AiOutlineUserAdd } from "react-icons/ai";
+import { NavLink, useNavigate } from "react-router-dom";
 // import { useSelector, useDispatch } from "react-redux";
 // import toast from "react-hot-toast";
 // import { logout } from "../../features";
@@ -9,7 +11,7 @@ export const Navbar = () => {
   //   const dispatch = useDispatch();
   //   const { user } = useSelector((state) => state.auth);
   return (
-    <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 font-['rajdhani'] bg-gradient-to-r from-purple-700 via-purple-600 to-purple-500">
+    <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         {/* <NavLink to="/" className="flex items-center"> */}
         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white tracking-wider">
@@ -58,54 +60,68 @@ export const Navbar = () => {
         >
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <li>
-              {/* <NavLink
+              <NavLink
                 to="/"
                 className={({ isActive }) =>
                   isActive
                     ? "text-lg block py-2 pr-4 pl-3 text-white-100 border-b border-gray-100  md:bg-transparent md:border-0  md:p-0 dark:text-gray-100 md:dark:text-green-400 dark:border-gray-100 bg-purple-900 font-bold"
                     : "text-lg block py-2 pr-4 pl-3 text-white-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:p-0 dark:text-gray-100 md:dark:hover:text-green-400 dark:hover:bg-purple-900 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-100 font-medium"
                 }
-              > */}
-              Home
-              {/* </NavLink> */}
+              >
+                <FiHeart className="text-2xl" />
+              </NavLink>
             </li>
 
             <li>
-              {/* <NavLink
-                to={`/profile/${user?.username}`}
+              <NavLink
+                // to={`/profile/${user?.username}`}
                 className={({ isActive }) =>
                   isActive
                     ? "text-lg block py-2 pr-4 pl-3 text-white-100 border-b border-gray-100  md:bg-transparent md:border-0  md:p-0 dark:text-gray-100 md:dark:text-green-400 dark:border-gray-100 bg-purple-900 font-bold"
                     : "text-lg block py-2 pr-4 pl-3 text-white-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:p-0 dark:text-gray-100 md:dark:hover:text-green-400 dark:hover:bg-purple-900 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-100 font-medium"
                 }
-              > */}
-              Profile
-              {/* </NavLink> */}
+              >
+                <AiOutlineShoppingCart className="text-2xl" />
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                // to={`/profile/${user?.username}`}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-lg block py-2 pr-4 pl-3 text-white-100 border-b border-gray-100  md:bg-transparent md:border-0  md:p-0 dark:text-gray-100 md:dark:text-green-400 dark:border-gray-100 bg-purple-900 font-bold"
+                    : "text-lg block py-2 pr-4 pl-3 text-white-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:p-0 dark:text-gray-100 md:dark:hover:text-green-400 dark:hover:bg-purple-900 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-100 font-medium"
+                }
+              >
+                <AiOutlineUserAdd className="text-2xl" />
+              </NavLink>
             </li>
           </ul>
-          {"user" ? (
-            <button
-              //   onClick={() => {
-              //     dispatch(logout());
-              //     toast("Bye, Logout successfully!", {
-              //       icon: "👋",
-              //     });
-              //     navigate("/register", { replace: true });
-              //   }}
-              className="mt-2 text-white bg-gradient-to-r from-gray-600 via-gray-700 to-gray-800 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-gray-400 dark:focus:ring-gray-900 font-medium rounded-lg text-base px-5 py-2 text-center mr-2 mb-2 w-full"
-            >
-              Logout
-            </button>
-          ) : (
-            <button
-              //   onClick={() => navigate("/register")}
-              className="mt-2 text-white bg-gradient-to-r from-gray-600 via-gray-700 to-gray-800 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-gray-400 dark:focus:ring-gray-900 font-medium rounded-lg text-base px-5 py-2 text-center mr-2 mb-2 w-full"
-            >
-              Register
-            </button>
-          )}
         </div>
       </div>
     </nav>
   );
 };
+
+{
+  /* <div className="nav-container">
+<input
+  className="search-input"
+  type="text"
+  onChange={handleInputChange}
+  value={query}
+  placeholder="Enter your search shoes."
+/>
+</div>
+<div className="profile-container">
+<a href="#">
+  <FiHeart className="nav-icons" />
+</a>
+<a href="">
+  <AiOutlineShoppingCart className="nav-icons" />
+</a>
+<a href="">
+  <AiOutlineUserAdd className="nav-icons" />
+</a>
+</div> */
+}
